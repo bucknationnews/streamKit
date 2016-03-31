@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <script src="thirdparty/jquery/jquery-minified.js"></script>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="thirdparty/materialize/css/materialize.min.css">
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="thirdparty/materialize/js/materialize.min.js"></script>
+        
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+          
+        <script src="streamkit.js"></script>
+    </head>
+    <body style="display:none">
+        <div class="container">
+            <div class="col s12">
+                <div class="row">
+                    <img class="responsive-img" src="img/emLyJpo.png">
+                </div>
+                <div class="row">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3 class="center light">Live Streaming</h3>
+                            <h5 class="center">We detected that you're <a id="subnet-text" class="black-text">using an outdated browser.</a></h5>
+                            <div class="center">
+                                <a id="link" class="btn-large z-depth-0 waves-effect waves-light blue darken-4" download><i class="material-icons left">cloud_download</i>Download Shortcut</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                             <ul class="collapsible popout" data-collapsible="accordion">
+                                <li>
+                                    <div class="collapsible-header"><i class="material-icons">help</i>What is this for?</div>
+                                    <div class="collapsible-body"><p>The networking behind video streaming is complicated, and it must be done efficiently to Buckhorn's infrastructure from being overloaded. The Buck Nation News team has set up a streaming system that uses multicast, a very efficient way to stream to many computers. However, for this to work, your computer has to open a different stream based on which subnet you are on. A subnet is like a section of a network, and here at Buckhorn subnets are determined based on your position (student, teacher, administrator, and so on). Your computer automatically handles all of this, so the end user never has to deal with it. This simple website will automatically detect what subnet your computer is on and send you the appropriate shortcut to open the stream you need. All you have to do is download the shortcut (a Windows Batch file) and place it on your desktop. If you have VLC Media Player installed, it will automatically connect to the correct stream when you click the shortcut.</p></div>
+                                </li>
+                                <li>
+                                    <div class="collapsible-header"><i class="material-icons">input</i>How do I install the shortcut?</div>
+                                    <div class="collapsible-body"><p>When you click download, your browser will download a tiny program (the shortcut) that tells VLC media player how to open the stream. <b>You can run this shortcut from anywhere on your computer, but we recommend putting it on your desktop.</b></p>
+                                        <p>When you click the "Download Shortcut" button above, you should be presented with a window asking asking you where you'd like to save it. Choose "Desktop" and click "Save." Once the file is done downloading, you should see a file called <b><code>BNN.bat</code></b> on your desktop, like this.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="collapsible-header"><i class="material-icons">build</i>It's not working for me...</div>
+                                    <div class="collapsible-body"><p>If nothing happens when you try to launch the program from your shortcut, you probably don't have <a href="http://videolan.org/vlc" target="_blank">VLC Media Player installed.</a>On most computers, you can check this by going to Start > All Programs and searching for VLC. If you can't find it, contact Ms. Sullins or a broadcasting student and we will come install it for you.</p></div>
+                                </li>
+                                 <li>
+                                    <div class="collapsible-header"><i class="material-icons">code</i>Developer Information</div>
+                                     <div class="collapsible-body">
+                                         <p><a href="http://github.com/bucknationnews/streamKit">This project is released under an open source license on GitHub.</a> It makes use of jQuery, MaterializeCSS, and custom scripts originally written by Hampton Morgan.</p>
+                                     </div>
+                                 </li>
+                            </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+    
+    //jQuery fade in code to keep the flashes to a minimum
+        $("body").delay(500).fadeIn(1500)
+    </script>
+</html>
