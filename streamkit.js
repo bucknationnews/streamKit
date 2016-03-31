@@ -22,6 +22,11 @@ findLocalAddr = function(addr) {
     if (addressBeginning == "10.4") {
         ip.localAddress = addr;
         console.log("Local IP we found was: " + ip.localAddress)
+        console.dir(ip)
+    }
+    if (addressBeginning == "207.") {
+        ip.publicAddress = addr;
+        console.log("Public IP we found was: " + ip.publicAddress)
     }
     
     //now we need to verify that the address was actually found
@@ -49,25 +54,27 @@ findLocalAddr = function(addr) {
 }
 
 function identify(subnet) {
-    if (subnet == "0") {
-        //default
-        $("#subnet-text").html("on the default subnet.")
-        $("#link").attr("href", "batch/default/Buck Nation News.bat")
-    }
-    else if (subnet == "2") {
-        //admins
-        $("#subnet-text").html("a school administrator.")
-        $("#link").attr("href", "batch/admins/Buck Nation News.bat")
-    }
-    else if (subnet == "4") {
-        //teachers
-        $("#subnet-text").html("a teacher.")
-        $("#link").attr("href", "batch/teachers/Buck Nation News.bat")
-    }
-    else if (subnet == "6") {
-        //students
-        $("#subnet-text").html("a student.")
-        $("#link").attr("href", "batch/students/Buck Nation News.bat")
+    if (ip.publicAddress == "207.157.66.16") {
+        if (subnet == "0") {
+            //default
+            $("#subnet-text").html("on the default subnet.")
+            $("#link").attr("href", "batch/default/Buck Nation News.bat")
+        }
+        else if (subnet == "2") {
+            //admins
+            $("#subnet-text").html("a school administrator.")
+            $("#link").attr("href", "batch/admins/Buck Nation News.bat")
+        }
+        else if (subnet == "4") {
+            //teachers
+            $("#subnet-text").html("a teacher.")
+            $("#link").attr("href", "batch/teachers/Buck Nation News.bat")
+        }
+        else if (subnet == "6") {
+            //students
+            $("#subnet-text").html("a student.")
+            $("#link").attr("href", "batch/students/Buck Nation News.bat")
+        }
     }
 }
 

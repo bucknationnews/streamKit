@@ -24,10 +24,14 @@
                             <h5 class="center">We detected that you're <a id="subnet-text" class="black-text">using an outdated browser.</a></h5>
                             <div class="center">
                                 <a id="link" class="btn-large z-depth-0 waves-effect waves-light blue darken-4" download><i class="material-icons left">cloud_download</i>Download Shortcut</a>
+                                <br>
+                                <p style="padding-top:10px"><a class="modal-trigger" href="#manual-select-modal">Did we detect the wrong information?</a></p>
                             </div>
                         </div>
                     </div>
                 </div>
+                
+                <!---collapsible help area--->
                 <div class="row">
                              <ul class="collapsible popout" data-collapsible="accordion">
                                 <li>
@@ -54,10 +58,43 @@
                 </div>
             </div>
         </div>
+        
+        <!---Manual Selection Modal--->
+        <div id="manual-select-modal" class="modal modal-fixed-footer">
+            <div class="modal-content">
+                <h4>Manual Stream Selection</h4>
+                <p>If we failed to detect your network settings correctly, or if your browser doesn't support automatic detection, you can choose your stream manually here.</p>
+                <ul class="collection with-header">
+                    <li class="collection-header"><h5>Wired Connection</h5>If you are using a desktop computer running Windows XP or newer, you should be able to view the stream just fine. Mac OSX is not supported here, sorry! If you need to view the stream from a Mac, contact Ms. Sullins or a broadcasting student.</li>
+                    <a href="batch/default/Buck%20Nation%20News.bat" download class="collection-item"><i class="material-icons left">build</i>Default Subnet (<code>10.4.0.0/23</code>, only choose if you know what you're doing!)</a>
+                    <a href="batch/teachers/Buck%20Nation%20News.bat" download class="collection-item"><i class="material-icons left">desktop_windows</i>Teachers</a>
+                    <a href="batch/students/Buck%20Nation%20News.bat" download class="collection-item"><i class="material-icons left">desktop_windows</i>Students</a>
+                    <a href="batch/admins/Buck%20Nation%20News.bat" download class="collection-item"><i class="material-icons left">desktop_windows</i>Administrators</a>
+                </ul>
+                <ul class="collection with-header">
+                    <li class="collection-header"><h5>Wireless Connection</h5><b>WiFi devices are currently unsupported due to network authentication issues.</b> If you need to watch the broadcast from a laptop without Ethernet or a mobile device, you can view the recorded archives on YouTube. You won't miss any content, it just isn't streamed live.</li>
+                </ul>
+                <div class="center">
+                    <h5>BNN YouTube Channel</h5>
+                        <p>You can view all our broadcasts on the Buckhorn High School YouTube channel on a playlist called "BNN Episodes." They can be viewed from any device, including via WiFi.</p>
+                        <a class="btn-large z-depth-0 blue darken-4" target="_blank" href="https://www.youtube.com/playlist?list=PL5kUlHkBWDwvDUFxmi1wWR5bvKN8Xqefq"><i class="material-icons left">video_library</i>BNN YouTube Channel</a>
+                        <br>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
+            </div>
+        </div>
     </body>
+    
+    
     <script>
     
     //jQuery fade in code to keep the flashes to a minimum
         $("body").delay(500).fadeIn(1500)
+        $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+  });
     </script>
 </html>
