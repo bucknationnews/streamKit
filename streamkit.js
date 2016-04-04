@@ -76,6 +76,10 @@ function identify(subnet) {
             $("#link").attr("href", "batch/students/Buck Nation News.bat")
         }
     }
+    else {
+        console.log("Your public IP indicates that you are not on the BHS network.")
+        $("#subnet-text").html("not connected to the Buckhorn campus network.")
+    }
 }
 
 
