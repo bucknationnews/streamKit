@@ -60,6 +60,11 @@ function identify(subnet) {
             $("#subnet-text").html("on the default subnet.")
             $("#link").attr("href", "batch/default/Buck Nation News.bat")
         }
+        if (subnet == "1") {
+            //default
+            $("#subnet-text").html("on the default subnet.")
+            $("#link").attr("href", "batch/default/Buck Nation News.bat")
+        }
         else if (subnet == "2") {
             //admins
             $("#subnet-text").html("a school administrator.")
