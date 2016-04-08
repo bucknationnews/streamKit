@@ -54,7 +54,7 @@ findLocalAddr = function(addr) {
 }
 
 function identify(subnet) {
-    if (ip.publicAddress == "207.157.66.16") {
+    if (ip.publicAddress.substring(0, 7) == "207.157") {
         if (subnet == "0") {
             //default
             $("#subnet-text").html("on the default subnet.")
