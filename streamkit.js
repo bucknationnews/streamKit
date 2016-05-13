@@ -54,8 +54,13 @@ findLocalAddr = function(addr) {
 }
 
 function identify(subnet) {
-    if (ip.publicAddress == "207.157.66.16") {
+    if (ip.publicAddress.substring(0, 7) == "207.157") {
         if (subnet == "0") {
+            //default
+            $("#subnet-text").html("on the default subnet.")
+            $("#link").attr("href", "batch/default/Buck Nation News.bat")
+        }
+        if (subnet == "1") {
             //default
             $("#subnet-text").html("on the default subnet.")
             $("#link").attr("href", "batch/default/Buck Nation News.bat")
@@ -75,6 +80,10 @@ function identify(subnet) {
             $("#subnet-text").html("a student.")
             $("#link").attr("href", "batch/students/Buck Nation News.bat")
         }
+    }
+    else {
+        console.log("Your public IP indicates that you are not on the BHS network.")
+        $("#subnet-text").html("not connected to the Buckhorn campus network.")
     }
 }
 
