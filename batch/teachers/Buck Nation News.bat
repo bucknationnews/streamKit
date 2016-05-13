@@ -5,6 +5,7 @@ IF EXIST "C:\Program Files (x86)\TechyGeeksHome.co.uk\VLC Player 2.2.2\" set vlc
 
 IF DEFINED vlc64 echo start /d "C:\Program Files\VideoLAN\VLC\" vlc.exe udp://@239.1.1.44:1234/ > %UserProfile%\Desktop\Buck^ Nation^ News.bat
 IF DEFINED vlc32 echo start /d "C:\Program Files (x86)\VideoLAN\VLC\" vlc.exe udp://@239.1.1.44:1234/ > %UserProfile%\Desktop\Buck^ Nation^ News.bat
+IF DEFINED vlcmsi echo start /d "C:\Program Files (x86)\TechyGeeksHome.co.uk\VLC Player 2.2.2\" vlc.exe udp://@239.1.1.44:1234/ > %UserProfile%\Desktop\Buck^ Nation^ News.bat
 IF DEFINED vlc32 echo We detected that you have VLC Media Player (32 bit) installed. & echo. & echo A shortcut to the BNN Live Stream has been placed on your desktop. It's named "Buck Nation News Live Stream." You can click that to launch the stream. & echo. & echo Please let Ms. Sullins or Hampton know if you have any problems!
 IF DEFINED vlc64 echo We detected that you have VLC Media Player (64 bit) installed. & echo. & echo A shortcut to the BNN Live Stream has been placed on your desktop. It's named "Buck Nation News Live Stream." You can click that to launch the stream. & echo. & echo Please let Ms. Sullins or Hampton know if you have any problems!
 IF DEFINED vlcmsi echo We detected that you have VLC Media Player 2.2.2 (via MSI GPO) installed. & echo A shortcut to the BNN Live Stream has been placed on your desktop. It's named "Buck Nation News Live Stream." You can click that to launch the stream. & echo. & echo Please let Ms. Sullins or Hampton know if you have any problems!
