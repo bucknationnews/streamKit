@@ -57,33 +57,38 @@ function identify(subnet) {
     if (ip.publicAddress.substring(0, 7) == "207.157") {
         if (subnet == "0") {
             //default
-            $("#subnet-text").html("on the default subnet.")
+            $("#subnet-text").html("We detected that you're on the default subnet. You're good to go!")
             $("#link").attr("href", "batch/default/Buck Nation News.bat")
+            $("#network-settings-button").html("<a onclick='$.fn.fullpage.moveSlideRight();' class='btn-large white black-text waves-effect'>Next<i class='material-icons right'>keyboard_arrow_right</i></a>")
         }
         if (subnet == "1") {
             //default
-            $("#subnet-text").html("on the default subnet.")
+            $("#subnet-text").html("We detected that you're on the default subnet. You're good to go!")
             $("#link").attr("href", "batch/default/Buck Nation News.bat")
+            $("#network-settings-button").html("<a onclick='$.fn.fullpage.moveSlideRight();' class='btn-large white black-text waves-effect'>Next<i class='material-icons right'>keyboard_arrow_right</i></a>")
         }
         else if (subnet == "2") {
             //admins
-            $("#subnet-text").html("a school administrator.")
+            $("#subnet-text").html("We detected that you're a school administrator. You're good to go!")
+            $("#network-settings-button").html("<a onclick='$.fn.fullpage.moveSlideRight();' class='btn-large white black-text waves-effect'>Next<i class='material-icons right'>keyboard_arrow_right</i></a>")
             $("#link").attr("href", "batch/admins/Buck Nation News.bat")
         }
         else if (subnet == "4") {
             //teachers
-            $("#subnet-text").html("a teacher.")
+            $("#subnet-text").html("We detected that you're a teacher. You're good to go!")
             $("#link").attr("href", "batch/teachers/Buck Nation News.bat")
+            $("#network-settings-button").html("<a onclick='$.fn.fullpage.moveSlideRight();' class='btn-large white black-text waves-effect'>Next<i class='material-icons right'>keyboard_arrow_right</i></a>")
         }
         else if (subnet == "6") {
             //students
-            $("#subnet-text").html("a student.")
+            $("#subnet-text").html("We detected that you're a student. You're good to go!")
             $("#link").attr("href", "batch/students/Buck Nation News.bat")
+            $("#network-settings-button").html("<a onclick='$.fn.fullpage.moveSlideRight();' class='btn-large white black-text waves-effect'>Next<i class='material-icons right'>keyboard_arrow_right</i></a>")
         }
     }
     else {
         console.log("Your public IP indicates that you are not on the BHS network.")
-        $("#subnet-text").html("not connected to the Buckhorn campus network.")
+        $("#subnet-text").html("We detected that you're not on a supported network. Make sure you're on a wired connection to the Buckhorn network and try again.")
     }
 }
 
@@ -164,3 +169,23 @@ function getIPs(callback){
         });
     }, 1000);
 }
+
+//Jquery stuff for page
+$(document).ready(function() {
+			$('#fullpage').fullpage({
+				anchors: ['firstPage', 'secondPage', '3rdPage'],
+				sectionsColor: ['#0d47a1'],
+				slidesNavigation: true,
+                controlArrows: false,
+			});
+    
+    //check to see if the user is on chrome
+    var isChrome = !!window.chrome;
+    if (isChrome == true) {
+        $("#browser-check-text").html("We detected that you're using Chrome. Awesome!")
+        $("#browser-check-button").html("<a onclick='$.fn.fullpage.moveSlideRight();' class='btn-large white black-text waves-effect'>Next<i class='material-icons right'>keyboard_arrow_right</i></a>")
+    }
+    else {
+        $("#browser-check-button").html("<a href='http://chrome.google.com' class='btn-large white black-text waves-effect'>Install Chrome</a>")
+    }
+});
